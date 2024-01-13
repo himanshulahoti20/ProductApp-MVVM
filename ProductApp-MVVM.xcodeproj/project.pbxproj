@@ -130,9 +130,9 @@
 		927AD7B52B52E7AA006FE565 /* Product */ = {
 			isa = PBXGroup;
 			children = (
-				927AD7B62B52E7AA006FE565 /* ViewModel */,
 				927AD7B82B52E7AA006FE565 /* Model */,
 				927AD7BA2B52E7AA006FE565 /* View */,
+				927AD7B62B52E7AA006FE565 /* ViewModel */,
 			);
 			path = Product;
 			sourceTree = "<group>";
