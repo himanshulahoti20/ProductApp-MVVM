@@ -9,6 +9,7 @@ import UIKit
 
 class ProductListViewController: UIViewController {
     
+    @IBOutlet weak var productTableView : UITableView!
     
     private var viewModel = ProductViewModel()
     
@@ -21,6 +22,7 @@ class ProductListViewController: UIViewController {
 extension ProductListViewController {
     
     func configuration(){
+        productTableView.register(UINib(nibName: "ProductCell", bundle: nil), forCellReuseIdentifier: "ProductCell")
         initViewModel()
         observeEvent()
     }
@@ -28,8 +30,6 @@ extension ProductListViewController {
     func initViewModel() {
         viewModel.fetchProducts()
     }
-    
-    
     
     // Data Binding event observe will make the communication happen
     func observeEvent() {
@@ -42,8 +42,28 @@ extension ProductListViewController {
             case .dataLoaded :
                 print(self.viewModel.products)
             case .error(let error):
-                print(error)
+                print(error as Any)
             }
         }
     }
+}
+
+extension ProductListViewController : UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.products.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell") as? ProductCell else {
+            return UITableViewCell()
+        }
+        
+        let product = viewModel.products[indexPath.row]
+        cell.product = product
+        return cell
+    }
+    
+    
+    
 }
