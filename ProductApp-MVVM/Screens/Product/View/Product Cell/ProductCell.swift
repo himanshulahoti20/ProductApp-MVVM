@@ -26,6 +26,10 @@ class ProductCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        cellView.clipsToBounds = false
+        cellView.layer.cornerRadius = 15
+        productImage.layer.cornerRadius = 10
+        self.cellView.backgroundColor = .systemGray6
         // Initialization code
     }
 
@@ -42,6 +46,7 @@ class ProductCell: UITableViewCell {
         productDescription.text = product.description
         priceLabel.text = "$\(product.price)"
         rateButton.setTitle("\(product.rating.rate)", for: .normal)
+        productImage.setImage(with: product.image)
     }
     
 }

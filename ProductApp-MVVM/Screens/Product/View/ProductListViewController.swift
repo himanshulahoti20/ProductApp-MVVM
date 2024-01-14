@@ -40,6 +40,9 @@ extension ProductListViewController {
             case .loading : break
             case .stopLoading : break
             case .dataLoaded :
+                DispatchQueue.main.async {
+                    self.productTableView.reloadData()
+                }
                 print(self.viewModel.products)
             case .error(let error):
                 print(error as Any)
