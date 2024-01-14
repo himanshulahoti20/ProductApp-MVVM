@@ -19,7 +19,7 @@ final class APIManager {
     
     
     // Function to make API request
-    func fetchData(completion: @escaping ([ProductModel]?, Error?) -> Void) {
+    func fetchData(completion: @escaping ([Product]?, Error?) -> Void) {
         let apiUrl = "https://fakestoreapi.com/products"
         
         AF.request(apiUrl, method: .get).response { response in
@@ -39,9 +39,9 @@ final class APIManager {
     }
     
     // Function to parse JSON data
-    func parseJSONData(jsonData: Data) -> [ProductModel]? {
+    func parseJSONData(jsonData: Data) -> [Product]? {
         do {
-            let products = try JSONDecoder().decode([ProductModel].self, from: jsonData)
+            let products = try JSONDecoder().decode([Product].self, from: jsonData)
             return products
         } catch {
             print("Error decoding JSON: \(error)")
