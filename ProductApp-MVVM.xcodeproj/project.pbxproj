@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92799F612B5654F00003A9FA /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92799F602B5654F00003A9FA /* LoginModel.swift */; };
+		92799F642B56550E0003A9FA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92799F622B56550E0003A9FA /* LoginViewController.swift */; };
+		92799F652B56550E0003A9FA /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92799F632B56550E0003A9FA /* LoginViewController.xib */; };
+		92799F682B5659300003A9FA /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 92799F672B5659300003A9FA /* IQKeyboardManagerSwift */; };
+		92799F6A2B568DDD0003A9FA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92799F692B568DDD0003A9FA /* LoginViewModel.swift */; };
 		927AD7982B52E743006FE565 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AD7972B52E743006FE565 /* AppDelegate.swift */; };
 		927AD79A2B52E743006FE565 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AD7992B52E743006FE565 /* SceneDelegate.swift */; };
 		927AD79F2B52E743006FE565 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 927AD79D2B52E743006FE565 /* Main.storyboard */; };
@@ -26,6 +31,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		92799F602B5654F00003A9FA /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		92799F622B56550E0003A9FA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		92799F632B56550E0003A9FA /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		92799F692B568DDD0003A9FA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		927AD7942B52E743006FE565 /* ProductApp-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ProductApp-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		927AD7972B52E743006FE565 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		927AD7992B52E743006FE565 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,12 +60,79 @@
 			files = (
 				928441F02B53BE48009E172F /* Kingfisher in Frameworks */,
 				92C0ED7B2B53A9D3002CF017 /* Alamofire in Frameworks */,
+				92799F682B5659300003A9FA /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		92799F5C2B5654B40003A9FA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				92799F5F2B5654C90003A9FA /* Model */,
+				92799F5E2B5654C60003A9FA /* View */,
+				92799F5D2B5654C40003A9FA /* ViewModel */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		92799F5D2B5654C40003A9FA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				92799F692B568DDD0003A9FA /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		92799F5E2B5654C60003A9FA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				92799F622B56550E0003A9FA /* LoginViewController.swift */,
+				92799F632B56550E0003A9FA /* LoginViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		92799F5F2B5654C90003A9FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				92799F602B5654F00003A9FA /* LoginModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		92799F6B2B568DF50003A9FA /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				92799F6E2B568E100003A9FA /* Model */,
+				92799F6D2B568E0E0003A9FA /* View */,
+				92799F6C2B568E0B0003A9FA /* ViewModel */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		92799F6C2B568E0B0003A9FA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		92799F6D2B568E0E0003A9FA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		92799F6E2B568E100003A9FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		927AD78B2B52E742006FE565 = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +209,8 @@
 		927AD7B42B52E7AA006FE565 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				92799F6B2B568DF50003A9FA /* SignUp */,
+				92799F5C2B5654B40003A9FA /* Login */,
 				927AD7B52B52E7AA006FE565 /* Product */,
 			);
 			path = Screens;
@@ -210,6 +288,7 @@
 			packageProductDependencies = (
 				92C0ED7A2B53A9D3002CF017 /* Alamofire */,
 				928441EF2B53BE48009E172F /* Kingfisher */,
+				92799F672B5659300003A9FA /* IQKeyboardManagerSwift */,
 			);
 			productName = "ProductApp-MVVM";
 			productReference = 927AD7942B52E743006FE565 /* ProductApp-MVVM.app */;
@@ -242,6 +321,7 @@
 			packageReferences = (
 				92C0ED792B53A9D3002CF017 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				928441EE2B53BE48009E172F /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				92799F662B5659300003A9FA /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 927AD7952B52E743006FE565 /* Products */;
 			projectDirPath = "";
@@ -259,6 +339,7 @@
 			files = (
 				927AD7A42B52E744006FE565 /* LaunchScreen.storyboard in Resources */,
 				927AD7A12B52E744006FE565 /* Assets.xcassets in Resources */,
+				92799F652B56550E0003A9FA /* LoginViewController.xib in Resources */,
 				92C0ED7F2B53B222002CF017 /* ProductCell.xib in Resources */,
 				927AD7C02B52E7AA006FE565 /* ProductListViewController.xib in Resources */,
 				927AD79F2B52E743006FE565 /* Main.storyboard in Resources */,
@@ -277,10 +358,13 @@
 				927AD7BF2B52E7AA006FE565 /* ProductListViewController.swift in Sources */,
 				928441F22B53D08A009E172F /* UIImageView+Extensions.swift in Sources */,
 				927AD7B22B52E788006FE565 /* APIManager.swift in Sources */,
+				92799F612B5654F00003A9FA /* LoginModel.swift in Sources */,
 				927AD79A2B52E743006FE565 /* SceneDelegate.swift in Sources */,
 				92C0ED7E2B53B222002CF017 /* ProductCell.swift in Sources */,
+				92799F6A2B568DDD0003A9FA /* LoginViewModel.swift in Sources */,
 				927AD7B12B52E788006FE565 /* Constants.swift in Sources */,
 				927AD7BD2B52E7AA006FE565 /* ProductViewModel.swift in Sources */,
+				92799F642B56550E0003A9FA /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +599,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		92799F662B5659300003A9FA /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		928441EE2B53BE48009E172F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -534,6 +626,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		92799F672B5659300003A9FA /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 92799F662B5659300003A9FA /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
 		928441EF2B53BE48009E172F /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 928441EE2B53BE48009E172F /* XCRemoteSwiftPackageReference "Kingfisher" */;
