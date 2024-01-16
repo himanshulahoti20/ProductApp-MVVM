@@ -20,9 +20,7 @@ final class APIManager {
     
     // Function to make API request
     func fetchData(completion: @escaping ([Product]?, Error?) -> Void) {
-        let apiUrl = "https://fakestoreapi.com/products"
-        
-        AF.request(apiUrl, method: .get).response { response in
+        AF.request(Constants.API.productURL, method: .get).response { response in
             switch response.result {
             case .success(let data):
                 if let jsonData = data {
@@ -47,5 +45,24 @@ final class APIManager {
             print("Error decoding JSON: \(error)")
             return nil
         }
+    }
+    
+    
+    func loginUser(email: String, password: String, completion: @escaping (Result<Data, Error>) -> Void) {
+        let parameters: [String: Any] = [
+            "email": email,
+            "password": password
+        ]
+        
+        AF.request(Constants.API.loginURL, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .validate(statusCode: 200..<300)
+            .responseData { response in
+                switch response.result {
+                case .success(let data):
+                    completion(.success(data))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
     }
 }

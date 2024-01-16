@@ -10,5 +10,7 @@ import Foundation
 enum Constants {
     enum API {
         static let productURL = "https://fakestoreapi.com/products"
+        static let loginURL   = "https://fakestoreapi.com/auth/login"
+        static let signUpURL  = "https://api.escuelajs.co/api/v1/users/"
     }
 }
