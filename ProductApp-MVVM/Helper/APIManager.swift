@@ -53,8 +53,20 @@ final class APIManager {
             "email": email,
             "password": password
         ]
-        
         AF.request(Constants.API.loginURL, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .validate(statusCode: 200..<300)
+            .responseData { response in
+                switch response.result {
+                case .success(let data):
+                    completion(.success(data))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+    }
+    
+    func signUpUser(parameters: [String: Any], completion: @escaping (Result<Data, AFError>) -> Void) {
+        AF.request(Constants.API.signUpURL, method: .post, parameters: parameters, encoding: JSONEncoding.default)
             .validate(statusCode: 200..<300)
             .responseData { response in
                 switch response.result {
